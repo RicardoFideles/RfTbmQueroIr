@@ -1,0 +1,33 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+@media print 
+{
+	
+
+/*CONTEUDO DO SITE*/
+.container {width:1100px !important;	}
+
+/*TELA DO ESTABELECIMENTO*/
+.printColA { width:200px; float:left;}
+.printColB { width:700px; float:left;}
+.printColC { width:200px; float:left;}
+
+
+/*ICON E NOME DA CATEGORIA DO ESTABELECIMENTO*/
+.printColDEstabelecIcon { width:100px; float:left;}
+.printColEEstabelecNome { width:800px; float:left;}
+	
+
+/*LOGO E SLOGAN*/
+.printColF { width:300px; float:left;}
+.printColG { width:600px; float:right;}
+
+
+/*TELA DA MATERIA*/
+.printColH { width:900px; float:left;}
+.printColI { width:200px; float:left;}
+
+	
+}

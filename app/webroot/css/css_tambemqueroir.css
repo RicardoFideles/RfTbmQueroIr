@@ -1,0 +1,728 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+@font-face {
+font-family: 'SouvenirStdLight';
+src: url('../fontes/souvenirstdlight.eot');
+src: url('../fontes/souvenirstdlight.eot?#iefix') format('embedded-opentype'),
+url('../fontes/souvenirstdlight.woff') format('woff'),
+url('../fontes/souvenirstdlight.ttf') format('truetype'),
+url('../fontes/souvenirstdlight.svg#plutocond_bold') format('svg');
+}
+
+@font-face {
+font-family: 'SouvenirStdMedium';
+src: url('../fontes/souvenirstdmedium.eot');
+src: url('../fontes/souvenirstdmedium.eot?#iefix') format('embedded-opentype'),
+url('../fontes/souvenirstdmedium.woff') format('woff'),
+url('../fontes/souvenirstdmedium.ttf') format('truetype'),
+url('../fontes/souvenirstdmedium.svg#plutocond_bold') format('svg');
+}
+
+@font-face {
+font-family: 'SouvenirStdDemi';
+src: url('../fontes/souvenirstddemi.eot');
+src: url('../fontes/souvenirstddemi.eot?#iefix') format('embedded-opentype'),
+url('../fontes/souvenirstddemi.woff') format('woff'),
+url('../fontes/souvenirstddemi.ttf') format('truetype'),
+url('../fontes/souvenirstddemi.svg#plutocond_bold') format('svg');
+
+}
+
+.fonteSiteSouvLight { font-family: 'SouvenirStdLight', Arial, serif; }
+.fonteSiteSouvMedium { font-family: 'SouvenirStdMedium', Arial, serif; }
+.fonteSiteSouvDemi { font-family: 'SouvenirStdDemi', Arial, serif; }
+
+
+/* LINKS */
+a { color: #ED2B56; font-weight:normal;}
+a:link {text-decoration: none;}
+a:visited {text-decoration: none;}
+a:hover {text-decoration:underline; }
+a:active {text-decoration: none;}
+
+/*HOME - MATERIA PRINCIPAL*/
+a.LinkMaterias1 { font-size:19pt; color: #1ca48c; }
+a.LinkMaterias1:link {text-decoration: none;}
+a.LinkMaterias1:visited {text-decoration: none;}
+a.LinkMaterias1:hover {text-decoration:none; color:#e31d51; }
+a.LinkMaterias1:active {text-decoration: none;}
+
+/*HOME - MATERIAS SECUNDARIAS*/
+a.LinkMaterias2 { font-size:14pt; color: #1ca48c; }
+a.LinkMaterias2:link {text-decoration: none;}
+a.LinkMaterias2:visited {text-decoration: none;}
+a.LinkMaterias2:hover {text-decoration:none; color:#e31d51; }
+a.LinkMaterias2:active {text-decoration: none;}
+
+/*HOME - CATEGORIAS LUGARES*/
+a.LinkCategoriasLugares { font-size:14pt; color: #1ca48c; }
+a.LinkCategoriasLugares:link {text-decoration: none;}
+a.LinkCategoriasLugares:visited {text-decoration: none;}
+a.LinkCategoriasLugares:hover {text-decoration:none; color:#e31d51; }
+a.LinkCategoriasLugares:active {text-decoration: none;}
+
+/*TOP5 - RANKING - LUGARES*/
+a.LinkTop5Lugar { font-size:9pt; color: #4c4c4c; font-weight:bold; line-height:20pt; }
+a.LinkTop5Lugar:link {text-decoration: none;}
+a.LinkTop5Lugar:visited {text-decoration: none;}
+a.LinkTop5Lugar:hover {text-decoration:none; color:#e31d51; }
+a.LinkTop5Lugar:active {text-decoration: none;}
+
+/*INTERNAS - BLOGS*/
+a.LinkInternas { font-size:11pt; color: #808080; }
+a.LinkInternas:link {text-decoration: none;}
+a.LinkInternas:visited {text-decoration: none;}
+a.LinkInternas:hover {text-decoration:none; color:#e31d51; }
+a.LinkInternas:active {text-decoration: none;}
+
+a.LinkInternasPaginacao { font-size:9pt; color: #808080; }
+a.LinkInternasPaginacao:link {text-decoration: none;}
+a.LinkInternasPaginacao:visited {text-decoration: none;}
+a.LinkInternasPaginacao:hover {text-decoration:none; color:#e31d51; }
+a.LinkInternasPaginacao:active {text-decoration: none;}
+
+/*INTERNAS*/
+a.LinkRodapeOutrosEstab { font-size:11pt; color: #4c4c4c; line-height:35px;}
+a.LinkRodapeOutrosEstab:link {text-decoration: none;}
+a.LinkRodapeOutrosEstab:visited {text-decoration: none;}
+a.LinkRodapeOutrosEstab:hover {text-decoration:none; color:#e31d51; }
+a.LinkRodapeOutrosEstab:active {text-decoration: none;}
+
+a.LinkListaMaterias { font-size:12pt; color: #e31d51; font-weight:bold;}
+a.LinkListaMaterias:link {text-decoration: none;}
+a.LinkListaMaterias:visited {text-decoration: none;}
+a.LinkListaMaterias:hover {text-decoration:underline; color:#e31d51; }
+a.LinkListaMaterias:active {text-decoration: none;}
+
+a.LinkOutrasMateriasVerTodas { font-size:10pt; color: #e31d51; font-weight:bold;}
+a.LinkOutrasMateriasVerTodas:link {text-decoration: none;}
+a.LinkOutrasMateriasVerTodas:visited {text-decoration: none;}
+a.LinkOutrasMateriasVerTodas:hover {text-decoration:underline; color:#e31d51; }
+a.LinkOutrasMateriasVerTodas:active {text-decoration: none;}
+
+
+a.LinkListaEntrevistas { font-size:12pt; color: #e31d51; font-weight:bold;}
+a.LinkListaEntrevistas:link {text-decoration: none;}
+a.LinkListaEntrevistas:visited {text-decoration: none;}
+a.LinkListaEntrevistas:hover {text-decoration:underline; color:#e31d51; }
+a.LinkListaEntrevistas:active {text-decoration: none;}
+
+a.LinkOutrasEntrevistasVerTodas { font-size:10pt; color: #e31d51; font-weight:bold;}
+a.LinkOutrasEntrevistasVerTodas:link {text-decoration: none;}
+a.LinkOutrasEntrevistasVerTodas:visited {text-decoration: none;}
+a.LinkOutrasEntrevistasVerTodas:hover {text-decoration:underline; color:#e31d51; }
+a.LinkOutrasEntrevistasVerTodas:active {text-decoration: none;}
+
+
+a.LinkEstabelecimentoSite { font-size:10pt; color: #e31d51;}
+a.LinkEstabelecimentoSite:link {text-decoration: none;}
+a.LinkEstabelecimentoSite:visited {text-decoration: none;}
+a.LinkEstabelecimentoSite:hover {text-decoration:underline; color:#e31d51; }
+a.LinkEstabelecimentoSite:active {text-decoration: none;}
+
+a.LinkEstabelecimentoOutros { font-size:12pt; color: #4c4c4c;}
+a.LinkEstabelecimentoOutros:link {text-decoration: none;}
+a.LinkEstabelecimentoOutros:visited {text-decoration: none;}
+a.LinkEstabelecimentoOutros:hover {text-decoration:underline; color:#e31d51; }
+a.LinkEstabelecimentoOutros:active {text-decoration: none;}
+
+
+a.LinkListaMinhasHist { font-size:12pt; color: #e31d51; font-weight:bold;}
+a.LinkListaMinhasHist:link {text-decoration: none;}
+a.LinkListaMinhasHist:visited {text-decoration: none;}
+a.LinkListaMinhasHist:hover {text-decoration:underline; color:#e31d51; }
+a.LinkListaMinhasHist:active {text-decoration: none;}
+
+a.LinkOutrasMinhasHistVerTodas { font-size:10pt; color: #e31d51; font-weight:bold;}
+a.LinkOutrasMinhasHistVerTodas:link {text-decoration: none;}
+a.LinkOutrasMinhasHistVerTodas:visited {text-decoration: none;}
+a.LinkOutrasMinhasHistVerTodas:hover {text-decoration:underline; color:#e31d51; }
+a.LinkOutrasMinhasHistVerTodas:active {text-decoration: none;}
+
+
+
+a.EsqueceuSenha { font-size:9pt; color: #1ca48c;}
+a.EsqueceuSenha:link {text-decoration: none;}
+a.EsqueceuSenha:visited {text-decoration: none;}
+a.EsqueceuSenha:hover {text-decoration:none; color:#e31d51; }
+a.EsqueceuSenha:active {text-decoration: none;}
+
+
+
+/*RODAPE - LINKS*/
+a.LinkRodape { font-size:8pt; color: #808080; }
+a.LinkRodape:link {text-decoration: none;}
+a.LinkRodape:visited {text-decoration: none;}
+a.LinkRodape:hover {text-decoration:none; color:#e21d51; }
+a.LinkRodape:active {text-decoration: none;}
+
+
+/*.container { width:940px;}*/
+
+
+
+div {border:0px solid #F00}
+
+.rowFixHorizScroll {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+
+
+/*GERAIS*/
+.bkgBody { background:url(../imagens/Site_BKG.jpg) repeat-x top center #b2eafb; color:#808080;}
+
+.bkgA { background-color:#1ca48c;} /*VERDE ESCURO*/
+.bkgB { background-color:#7ec243;} /*VERDE CLARO*/
+.bkgC { background-color:#e7f5f4;} /*AZUL CLARO FOOTER*/
+.bkgD { background-color:#FFFFFF;} /*BRANCO*/
+
+.textColorA { color:#FFF;}
+.textColorB { color:#1ca48c;}
+.textColorC {color:#4c4c4c !important;}
+
+.MarginPaddingZera {margin:0; padding:0; }
+
+
+
+/*ROWS*/
+.marginTopA {margin-top:20px;}
+.marginBottomA {margin-bottom:20px;}
+.marginTopB {margin-top:50px;}
+.marginBottomB {margin-bottom:50px;}
+
+/*IMAGENS*/
+.marginTopIMG {margin-top:10px;}
+.marginBottomIMG {margin-bottom:10px;}
+
+/*ROUNDED*/
+.RoundedCornerEmCima {	
+	overflow:hidden;
+	border-top-left-radius: 10px 10px;
+	border-top-right-radius: 10px 10px;
+	-moz-border-radius-topleft: 10px 10px;
+	-moz-border-radius-topright: 10px 10px;
+	-webkit-border-radius-topleft: 10px 10px;
+	-webkit-border-radius-topright: 10px 10px;
+	-khtml-border-radius-topleft: 10px 10px;
+	-khtml-border-radius-topright: 10px 10px;
+}
+
+.RoundedCornerEmBaixo {	
+	overflow:hidden;
+	border-bottom-left-radius: 10px 10px;
+	border-bottom-right-radius: 10px 10px;
+	-moz-border-radius-bottomleft: 10px 10px;
+	-moz-border-radius-bottomright: 10px 10px;
+	-webkit-border-radius-bottomleft: 10px 10px;
+	-webkit-border-radius-bottomright: 10px 10px;
+	-khtml-border-radius-bottomleft: 10px 10px;
+	-khtml-border-radius-bottomright: 10px 10px;
+}
+
+
+/*HEADER E FOOTER*/
+.faixaTopo_e_Rodape {padding-top:5px; padding-bottom:5px;}
+
+.FaixaLogoAltura { min-height:155px;padding-top:5px; padding-bottom:5px;}
+.FaixaLogoAltura2 { height:100px; padding-top:5px; padding-bottom:5px;}
+.FaixaLogoSlogan { margin-top:35px;}
+.FaixaLogoRedesSociais {margin-top:15px;}
+.FaixaLogoRedesSociais span{ font-size:9pt;}
+.FaixaLogoMobile img { width:100px; height:auto;}
+
+
+
+.bkgMenuBuscaTopo1 { min-height:30px; padding-bottom:5px; background-color:#7ec243; /*background:url(../imagens/Bkg_BuscaTopo.png) no-repeat top center;*/}
+.bkgMenuBuscaTopo2 { height:3px; background:url(../imagens/MenuDivisoria.png) repeat-x top center;}
+.bkgMenuBuscaTopo3 { min-height:35px; padding-bottom:5px; padding-top:5px; background-color:#1ca48c; /*background:url(../imagens/Bkg_BuscaTopo.png) no-repeat top center;*/}
+
+.EmFoco { margin-top:17px;}
+.FormBusca { margin-top:12px;}
+.FormBuscaInput { background-color:#a5d47c; border:0px; color:#FFF; font-size:10pt; }
+
+.fotoSize {width:100%;}
+.HomeAltMinA {min-height:470px;}
+.HomeAltMinB {min-height:350px;}
+.HomeAltMinC {min-height:300px;}
+.RodapeAltMin {min-height:200px;}
+.InternaAlturaBlog {min-height:70px;}
+.InternaAlturaBlog p { margin:0; padding:0; color: #e31d51; font-size:14pt;}
+
+.bkgRodape { background:url(../imagens/Bkg_RodapeDegradee.png) #e7f5f4 repeat-x top center;}
+
+
+
+/* RANKING */
+.Top5RankingBKG {background-color:#e8f6f3; padding-top:20px; margin-top:20px; padding-bottom:20px;}
+.Top5RankingBKGTituloP1 {color:#e31d51; font-size:12pt; margin:0; padding:0; text-indent:-10px;}
+.Top5RankingBKGTituloP2 {color:#4c4c4c; font-size:12pt; margin:0; padding:0; text-indent:-10px;}
+.Top5RankingPosicao {color:#1ca48c; font-size:27pt; margin:0; padding:0; text-align:center; height:50px;}
+.Top5RankingLugarAvaliacao {margin:0; padding:0; }
+
+hr.hrTop5 {
+  border-width: 1px;
+  margin:5px 0px 10px 0px; 
+  padding:0;
+  border-bottom:1px solid #d0ddda;
+  box-shadow: 0 1px 0 #FFF;
+}
+
+
+.Top5RankingBKGInterna {background-color:#e8f6f3; padding-top:10px; margin-top:10px; padding-bottom:10px;}
+.Top5RankingPosicaoInterna {color:#1ca48c; font-size:16pt; margin:0; padding:0; text-align:center;}
+.Top5RankingLugarAvaliacaoStarsInterna { padding-top:5px; }
+
+hr.hrTop5Interna {
+  border-width: 1px;
+  margin:0px 0px 10px 0px; 
+  padding:0;
+  border-bottom:1px solid #d0ddda;
+  box-shadow: 0 1px 0 #FFF;
+}
+
+
+
+/* ENQUETE */
+.EnqueteTitulo {font-size:12pt;}
+.EnqueteTextWeight {font-weight:normal;}
+
+
+
+/*HOME ICONES CATEGORIAS*/
+.CategoriaPosIcon { position:absolute; z-index:2; margin-top:-6px; margin-left:5px;}
+.CategoriasIconSM { width:60px; height:auto;}
+.CategoriasIconXS { width:47px; height:auto;}
+.CategoriasIconXXS { width:30px; height:auto;}
+
+
+
+/*FOTOS DE PERFIL DE USUARIO*/
+.FotoUserSM { width:150px; height:auto;}
+.FotoUserXS { width:60px; height:auto;}
+
+
+
+/*INTERNAS*/
+.TitulosInternas {font-size:20pt !important;}
+
+hr.hrTitulos {
+  border-width: 1px;
+  margin:0px 0px 5px 0px; 
+  padding:0;
+  border-bottom:1px solid #e21d51;
+  box-shadow: 0 1px 0 #e21d51;
+}
+hr { margin-top:10px; margin-bottom:10px;}
+
+
+.InternasPaginacao {font-size:9pt;}
+
+.bkgRodapeOutrosEstab { background:url(../imagens/Bkg_RodapeOutrosEstab.png) repeat-x top center; padding-top:40px; padding-bottom:10px;}
+.OutrosEstabTitulo {font-size:16pt; color:#4c4c4c;}
+.OutrosEstabTexto {font-size:9pt; padding-bottom:20px;}
+
+
+
+.MateriasTituloListagem { margin-bottom:20px;}
+.MateriasTituloListagem p{ margin:0; padding:0;}
+.MateriasAbertas p{ margin:0; padding:0;}
+.MateriasTitulo { font-size:20pt; color:#e21d51;}
+.MateriasData { font-size:8pt; font-style:italic;  margin:0; padding:0;}
+.MateriasShare {text-align:right; margin:0; padding:0;}
+.MateriasSubtituloGR { font-size:13pt;}
+.MateriasSubtituloPQ { font-size:10pt;}
+.MateriasTexto { font-size:10pt; margin-top:40px;}
+.MateriasLegendas { font-size:8pt; font-style:italic;}
+.MateriasFoto { float:left; margin-right:20px; margin-bottom:10px;}
+.MateriasFotoClip { max-width:300px; max-height:400px; overflow:visible;}
+.MateriasFotoLegenda {float:left; position:relative; width:100%;}
+.MateriasFoto p { margin-top:10px; margin-bottom:10px;}
+
+.MateriasOutrasTituloCol { font-size:14pt;}
+.MateriasOutras { font-size:10pt;margin-bottom:30px;} 
+
+
+
+
+.EntrevistasTituloListagem { margin-bottom:20px;}
+.EntrevistasTituloListagem p{ margin:0; padding:0;}
+.EntrevistasAbertas p{ margin:0; padding:0;}
+.EntrevistasTitulo { font-size:20pt; color:#e21d51;}
+.EntrevistasData { font-size:8pt; font-style:italic;  margin:0; padding:0;}
+.EntrevistasShare {text-align:right; margin:0; padding:0;}
+.EntrevistasSubtituloGR { font-size:13pt;}
+.EntrevistasSubtituloPQ { font-size:10pt;}
+.EntrevistasTexto { font-size:10pt; margin-top:40px;}
+.EntrevistasLegendas { font-size:8pt; font-style:italic;}
+.EntrevistasFoto { float:left; margin-right:20px; margin-bottom:10px;}
+.EntrevistasFotoClip { max-width:300px; max-height:400px; overflow:visible;}
+.EntrevistasFotoLegenda {float:left; position:relative; width:100%;}
+.EntrevistasFoto p { margin-top:10px; margin-bottom:10px;}
+
+.EntrevistasOutrasTituloCol { font-size:14pt;}
+.EntrevistasOutras { font-size:10pt;margin-bottom:30px;} 
+
+
+
+
+
+.MinhaHistTituloListagem { margin-bottom:20px;}
+.MinhaHistTituloListagem p{ margin:0; padding:0;}
+.MinhaHistAbertas p{ margin:0; padding:0;}
+.MinhaHistTitulo { font-size:20pt; color:#e21d51;}
+.MinhaHistData { font-size:8pt; font-style:italic;  margin:0; padding:0;}
+.MinhaHistShare {text-align:right; margin:0; padding:0;}
+.MinhaHistSubtituloGR { font-size:13pt;}
+.MinhaHistSubtituloPQ { font-size:10pt;}
+.MinhaHistTexto { font-size:10pt; margin-top:40px;}
+.MinhaHistLegendas { font-size:8pt; font-style:italic;}
+.MinhaHistFoto { float:left; margin-right:20px; margin-bottom:10px;}
+.MinhaHistFotoClip { max-width:300px; max-height:400px; overflow:visible;}
+.MinhaHistFotoLegenda {float:left; position:relative; width:100%;}
+.MinhaHistFoto p { margin-top:10px; margin-bottom:10px;}
+
+.MinhaHistOutrasTituloCol { font-size:14pt;}
+.MinhaHistOutras { font-size:10pt;margin-bottom:30px;} 
+
+
+
+
+
+
+
+
+
+.EstabelecimentoCategoriaFixPos { padding-top:15px;} /* Ajusta a posição vertical dos nomes de categoria dos estabelecimentos como: teatro, cinema, etc  */
+.EstabelecimentoInfos { font-size:10pt;margin-bottom:30px;} 
+.EstabelecimentoOutrosTexto { font-size:10pt;} 
+.EstabelecimentosShare {text-align:right; margin-bottom:40px;}
+.EstabelecimentoSubTitulos { font-size:9pt;} 
+
+
+
+
+
+
+.ComentarioNome {font-size:12pt; font-weight:bold; color:#e31d51;}
+.ComentarioTexto {font-size:10pt;}
+
+
+
+
+
+
+/* RODAPE */
+.RodapeTitulo { font-size:9pt; font-weight:bold; color:#4c4c4c; letter-spacing:-0.5pt;}
+.RodapeTexto { font-size:9pt; }
+ul.RodapeTextoListUL {list-style: none; padding:0; margin:0;}
+li.RodapeTextoListLI { padding-left: 0px; text-indent: 0px;}
+li.RodapeTextoListLI:before {content: "•"; color: #e21d51; /* or whatever color you prefer  VERMELHO e21d51    LARANJA f26c25*/}
+.RodapeCopyright { font-size:8pt;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* SCREEN VARIABLE */
+.BoxesCategoriasFaixaTopo {
+	text-indent:57px;
+	padding-top:2px;
+	width:293px; 
+	height:25px;
+	background-color:#000; 
+	position:absolute;
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=70)"; /*IE8*/
+	filter: alpha(opacity=70);  /*IE7 and below*/
+	-moz-opacity:0.70; /*Firefox*/ 
+	-khtml-opacity: 0.70; /*Safari */
+	opacity: 0.70; /*Modern Browsers*/
+}
+
+.BoxesCategoriasFaixaTopoTexto {
+	text-indent:57px;
+	padding-top:3px;
+	position:absolute;
+	z-index:2;
+	color:#FFFFFF;
+}
+
+
+
+
+
+@media screen and (min-width: 1170px) {
+.BoxesCategoriasFaixaTopo {	width:360px; }
+}
+
+@media screen and (max-width: 1170px) {
+.MainMenu > li,
+.MainMenu > li > a {
+	font-size:9pt !important;
+}
+}
+
+@media screen and (max-width: 970px) {
+.BoxesCategoriasFaixaTopo {width:220px; }
+
+}
+
+@media screen and (max-width: 750px) {
+.BoxesCategoriasFaixaTopo {width:595px; }
+}
+
+@media screen and (max-width: 320px) {
+.BoxesCategoriasFaixaTopo {width:275px; }
+}
+
+
+
+
+/*MENU*/
+
+/*EXIBIR MENU SEM CORTE*/
+.NoCutMenu {overflow: visible;}
+
+/*CENTER MENU*/
+.nav-tabs > li, .nav-pills > li {
+    float:none;
+    display:inline-block;
+    *display: inline;     /* for IE7*/
+    *zoom:1;              /* for IE7*/
+}
+
+.nav-tabs {
+    text-align:center;
+}
+
+
+/*DROPDOWN MENU COLORS*/
+.MainMenu > li,
+.MainMenu > li > a {
+	font-size:10pt;
+    color: #FFF;
+	background-color:#1CA48C;
+	padding:3px;
+	margin-top:2px;
+	
+	/*FADE MENU*/
+	-webkit-transition: all ease-in-out .3s;
+    -moz-transition: all ease-in-out .3s;
+    -ms-transition: all ease-in-out .3s;
+    -o-transition: all ease-in-out .3s;
+    transition: all ease-in-out .3s;
+}
+
+.MainMenu > li > a:hover,
+.MainMenu > li > a:focus {
+    color: #7ec243;
+    background-color: #1CA48C;
+}
+
+
+.MainMenu > .active > a, 
+.MainMenu > .active > a:hover, 
+.MainMenu > .active > a:focus {
+    color: #7ec243;
+    background-color: #1CA48C;
+}
+
+.MainMenu > .open > a, 
+.MainMenu > .open > a:hover, 
+.MainMenu > .open > a:focus {
+    color: #7ec243;
+    background-color: #1CA48C;
+}
+
+
+/*FADE IN MENU DROPDOWN*/
+.open > .dropdown-menu {
+  animation-name: DropdownFade;
+  animation-duration:.3s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+
+  -webkit-animation-name: DropdownFade;
+  -webkit-animation-duration:.3s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-fill-mode: forwards;
+
+  -moz-animation-name: DropdownFade;
+  -moz-animation-duration:.3s;
+  -moz-animation-iteration-count: 1;
+  -moz-animation-timing-function: ease;
+  -moz-animation-fill-mode: forwards;
+}
+@keyframes DropdownFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes DropdownFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+/*MENU DROPDOWN*/
+.dropdown-menu { background-color:#FFF;}
+.dropdown-menu>li>a {color: #1ca48c;}
+.dropdown-menu>li>a:hover {color: #1ca48c;}
+
+.setaBranca-caret{
+border-top-color: #FFF !important;
+border-bottom-color: #FFF !important;
+}
+
+.setaVerde-caret{
+border-top-color: #1ca48c !important;
+border-bottom-color: #1ca48c !important;
+}
+
+
+
+
+.formMargin { margin:5px;}
+
+
+
+
+/* BOTAO A - LOGIN_CADASTRESE_FUNDO_BRANCO_LETRA_VERDE*/
+		.btn-tbqueroirA {
+			color: #1CA48C;
+			background-color: #FFFFFF;
+			*background-color: #FFFFFF;
+			border:0px;
+			border-color: #FFFFFF;
+			border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+			margin-bottom:3px;
+		}
+		.btn-tbqueroirA:hover,.btn-tbqueroirA:focus,.btn-tbqueroirA:active,.btn-tbqueroirA:active,.open .dropdown-toggle.btn-tbqueroirA{
+			color: #1CA48C;
+			background-color: #FFFFFF;
+			*background-color: #FFFFFF;
+		}
+		.btn-tbqueroirA.disabled,.btn-tbqueroirA[disabled] {
+			color: #666666;
+			background-color: #FFFFFF;
+			*background-color: #FFFFFF;
+		}
+
+
+
+/* BOTAO B - CIDADE_FUNDO_VERDE_ESCURO_LETRA_BRANCA*/
+		.btn-tbqueroirB {
+			font-size:11pt;
+			color: #FFFFFF;
+			background-color: #1CA48C;
+			*background-color: #1CA48C;
+			border:0px;
+			border-color: #1CA48C;
+			border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+			margin-top:-2px;
+		}
+		.btn-tbqueroirB:hover,.btn-tbqueroirB:focus,.btn-tbqueroirB:active,.btn-tbqueroirB:active,.open .dropdown-toggle.btn-tbqueroirB{
+			color: #FFFFFF;
+			background-color: #1CA48C;
+			*background-color: #1CA48C;
+		}
+		.btn-tbqueroirB.disabled,.btn-tbqueroirB[disabled] {
+			color: #666666;
+			background-color: #FFFFFF;
+			*background-color: #FFFFFF;
+		}
+
+
+
+/* BOTAO C - MENU*/
+		.btn-tbqueroirMenu {
+			color: #FFFFFF;
+			background-color: #1CA48C;
+			*background-color: #1CA48C;
+			border:0px;
+			border-color: #1CA48C;
+			border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+		}
+		.btn-tbqueroirMenu:hover,.btn-tbqueroirMenu:focus,.btn-tbqueroirMenu:active,.btn-tbqueroirMenu:active,.open .dropdown-toggle.btn-tbqueroirMenu{
+			color: #FFFFFF;
+			background-color: #1CA48C;
+			*background-color: #1CA48C;
+		}
+		.btn-tbqueroirMenu.disabled,.btn-tbqueroirMenu[disabled] {
+			color: #666666;
+			background-color: #FFFFFF;
+			*background-color: #FFFFFF; /*003bb3*/
+		}
+
+
+/* BOTAO D - BUSCAR*/
+		.btn-tbqueroirD {
+			color: #7ec243;
+			background-color: #FFFFFF;
+			*background-color: #FFFFFF;
+			border:0px;
+			border-color: #FFFFFF;
+			border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+		}
+		.btn-tbqueroirD:hover,.btn-tbqueroirD:focus,.btn-tbqueroirD:active,.btn-tbqueroirD:active,.open .dropdown-toggle.btn-tbqueroirD{
+			color: #FFF;
+			background-color: #a5d47c;
+			*background-color: #a5d47c;
+		}
+		.btn-tbqueroirD.disabled,.btn-tbqueroirD[disabled] {
+			color: #666666;
+			background-color: #FFFFFF;
+			*background-color: #FFFFFF;
+		}
+
+
+/* BOTAO E - ENVIAR */
+		.btn-tbqueroirE {
+			color: #FFF;
+			background-color: #4d4d4d;/*7ec243*/
+			*background-color: #FFFFFF;
+			border:0px;
+			border-color: #FFFFFF;
+			border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+		}
+		.btn-tbqueroirE:hover,.btn-tbqueroirE:focus,.btn-tbqueroirE:active,.btn-tbqueroirE:active,.open .dropdown-toggle.btn-tbqueroirE{
+			color: #FFF;
+			background-color: #a5d47c;
+			*background-color: #a5d47c;
+		}
+		.btn-tbqueroirE.disabled,.btn-tbqueroirE[disabled] {
+			color: #666666;
+			background-color: #FFFFFF;
+			*background-color: #a5d47c;
+		}
+
+
+

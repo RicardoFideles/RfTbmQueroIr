@@ -1,103 +1,75 @@
 <?php
-App::uses('AppController', 'Controller');
 /**
- * Pages Controller
+ * Static content controller.
  *
- * @property Page $Page
- * @property PaginatorComponent $Paginator
+ * This file will render views from views/pages/
+ *
+ * PHP 5
+ *
+ * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
+ * Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ *
+ * Licensed under The MIT License
+ * Redistributions of files must retain the above copyright notice.
+ *
+ * @copyright     Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * @link          http://cakephp.org CakePHP(tm) Project
+ * @package       app.Controller
+ * @since         CakePHP(tm) v 0.2.9
+ * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
+ */
+
+App::uses('AppController', 'Controller');
+
+/**
+ * Static content controller
+ *
+ * Override this controller by placing a copy in controllers directory of an application
+ *
+ * @package       app.Controller
+ * @link http://book.cakephp.org/2.0/en/controllers/pages-controller.html
  */
 class PagesController extends AppController {
 
 /**
- * Components
+ * Controller name
+ *
+ * @var string
+ */
+	public $name = 'Pages';
+
+/**
+ * This controller does not use a model
  *
  * @var array
  */
-	public $components = array('Paginator');
+	public $uses = array();
 
 /**
- * index method
+ * Displays a view
  *
+ * @param mixed What page to display
  * @return void
  */
-	public function index() {
-		$this->Page->recursive = 0;
-		$this->set('pages', $this->Paginator->paginate());
+	public function display() {
+		$path = func_get_args();
+
+		$count = count($path);
+		if (!$count) {
+			$this->redirect('/');
+		}
+		$page = $subpage = $title_for_layout = null;
+
+		if (!empty($path[0])) {
+			$page = $path[0];
+		}
+		if (!empty($path[1])) {
+			$subpage = $path[1];
+		}
+		if (!empty($path[$count - 1])) {
+			$title_for_layout = Inflector::humanize($path[$count - 1]);
+		}
+		$this->set(compact('page', 'subpage', 'title_for_layout'));
+		$this->render(implode('/', $path));
 	}
-
-/**
- * view method
- *
- * @throws NotFoundException
- * @param string $id
- * @return void
- */
-	public function view($id = null) {
-		if (!$this->Page->exists($id)) {
-			throw new NotFoundException(__('Invalid page'));
-		}
-		$options = array('conditions' => array('Page.' . $this->Page->primaryKey => $id));
-		$this->set('page', $this->Page->find('first', $options));
-	}
-
-/**
- * add method
- *
- * @return void
- */
-	public function add() {
-		if ($this->request->is('post')) {
-			$this->Page->create();
-			if ($this->Page->save($this->request->data)) {
-				$this->Session->setFlash(__('The page has been saved.'));
-				return $this->redirect(array('action' => 'index'));
-			} else {
-				$this->Session->setFlash(__('The page could not be saved. Please, try again.'));
-			}
-		}
-	}
-
-/**
- * edit method
- *
- * @throws NotFoundException
- * @param string $id
- * @return void
- */
-	public function edit($id = null) {
-		if (!$this->Page->exists($id)) {
-			throw new NotFoundException(__('Invalid page'));
-		}
-		if ($this->request->is(array('post', 'put'))) {
-			if ($this->Page->save($this->request->data)) {
-				$this->Session->setFlash(__('The page has been saved.'));
-				return $this->redirect(array('action' => 'index'));
-			} else {
-				$this->Session->setFlash(__('The page could not be saved. Please, try again.'));
-			}
-		} else {
-			$options = array('conditions' => array('Page.' . $this->Page->primaryKey => $id));
-			$this->request->data = $this->Page->find('first', $options);
-		}
-	}
-
-/**
- * delete method
- *
- * @throws NotFoundException
- * @param string $id
- * @return void
- */
-	public function delete($id = null) {
-		$this->Page->id = $id;
-		if (!$this->Page->exists()) {
-			throw new NotFoundException(__('Invalid page'));
-		}
-		$this->request->onlyAllow('post', 'delete');
-		if ($this->Page->delete()) {
-			$this->Session->setFlash(__('The page has been deleted.'));
-		} else {
-			$this->Session->setFlash(__('The page could not be deleted. Please, try again.'));
-		}
-		return $this->redirect(array('action' => 'index'));
-	}}
+}
