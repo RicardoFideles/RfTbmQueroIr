@@ -3,8 +3,8 @@ App::uses('AppModel', 'Model');
 /**
  * CategoriesCity Model
  *
- * @property City $City
  * @property Category $Category
+ * @property City $City
  */
 class CategoriesCity extends AppModel {
 
@@ -14,16 +14,6 @@ class CategoriesCity extends AppModel {
  * @var array
  */
 	public $validate = array(
-		'city_id' => array(
-			'numeric' => array(
-				'rule' => array('numeric'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
 		'category_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
@@ -34,9 +24,9 @@ class CategoriesCity extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'name' => array(
-			'notEmpty' => array(
-				'rule' => array('notEmpty'),
+		'city_id' => array(
+			'numeric' => array(
+				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -54,16 +44,16 @@ class CategoriesCity extends AppModel {
  * @var array
  */
 	public $belongsTo = array(
-		'City' => array(
-			'className' => 'City',
-			'foreignKey' => 'city_id',
+		'Category' => array(
+			'className' => 'Category',
+			'foreignKey' => 'category_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
 		),
-		'Category' => array(
-			'className' => 'Category',
-			'foreignKey' => 'category_id',
+		'City' => array(
+			'className' => 'City',
+			'foreignKey' => 'city_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''

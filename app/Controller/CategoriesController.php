@@ -20,7 +20,7 @@ class CategoriesController extends AppController {
  *
  * @return void
  */
-	public function index() {
+	public function admin_index() {
 		$this->Category->recursive = 0;
 		$this->set('categories', $this->Paginator->paginate());
 	}
@@ -32,7 +32,7 @@ class CategoriesController extends AppController {
  * @param string $id
  * @return void
  */
-	public function view($id = null) {
+	public function admin_view($id = null) {
 		if (!$this->Category->exists($id)) {
 			throw new NotFoundException(__('Invalid category'));
 		}
@@ -45,7 +45,7 @@ class CategoriesController extends AppController {
  *
  * @return void
  */
-	public function add() {
+	public function admin_add() {
 		if ($this->request->is('post')) {
 			$this->Category->create();
 			if ($this->Category->save($this->request->data)) {
@@ -66,11 +66,11 @@ class CategoriesController extends AppController {
  * @param string $id
  * @return void
  */
-	public function edit($id = null) {
+	public function admin_edit($id = null) {
 		if (!$this->Category->exists($id)) {
 			throw new NotFoundException(__('Invalid category'));
 		}
-		if ($this->request->is(array('post', 'put'))) {
+		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Category->save($this->request->data)) {
 				$this->Session->setFlash(__('The category has been saved.'));
 				return $this->redirect(array('action' => 'index'));
@@ -92,7 +92,7 @@ class CategoriesController extends AppController {
  * @param string $id
  * @return void
  */
-	public function delete($id = null) {
+	public function admin_delete($id = null) {
 		$this->Category->id = $id;
 		if (!$this->Category->exists()) {
 			throw new NotFoundException(__('Invalid category'));
@@ -104,4 +104,41 @@ class CategoriesController extends AppController {
 			$this->Session->setFlash(__('The category could not be deleted. Please, try again.'));
 		}
 		return $this->redirect(array('action' => 'index'));
-	}}
+	}
+	
+	public function menu () {
+		
+		$cidadeSelecionada =  Configure::read('Config.cidadeSelecionada');
+		
+		$id_cidadeSelecionada = $cidadeSelecionada['City']['id'];
+		
+		
+		$options = array('conditions' => array('CategoryCities' => 1));
+		
+		return  $this->Category->query('Select * from categories where id in (Select category_id from categories_cities where city_id =' .$id_cidadeSelecionada.');');
+		
+	}
+	
+	public function admin_lista_categorias ($id_cidade = null) {
+		
+		if (empty($id_cidade)) {
+			$id_cidade = 1;
+		}
+		
+		return  $this->Category->query('Select * from categories where id in (Select category_id from categories_cities where city_id =' .$id_cidade.');');
+	}
+	
+	public function categoria ($id = null) {
+		
+		$this->Category->id = $id;
+		
+		if (!$this->Category->exists()) {
+			return "";
+		}
+		
+		$options = array('conditions' => array('Category.' . $this->Category->primaryKey => $id));
+		return $this->Category->find('first', $options);
+		
+	}
+	
+}

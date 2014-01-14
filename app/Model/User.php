@@ -3,7 +3,6 @@ App::uses('AppModel', 'Model');
 /**
  * User Model
  *
- * @property Comment $Comment
  */
 class User extends AppModel {
 
@@ -14,67 +13,88 @@ class User extends AppModel {
  */
 	public $validate = array(
 		'name' => array(
-			'notEmpty' => array(
-				'rule' => array('notEmpty'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
-		'email' => array(
-			'email' => array(
-				'rule' => array('email'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			'notempty' => array(
+				'rule' => array('notempty'),
+				'message' => 'Campo obrigatório',
+				'allowEmpty' => false,
 			),
 		),
 		'username' => array(
-			'notEmpty' => array(
-				'rule' => array('notEmpty'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			'notempty' => array(
+				'rule' => array('notempty'),
+				'message' => 'Campo obrigatório',
+				'allowEmpty' => false,
 			),
 		),
 		'password' => array(
-			'notEmpty' => array(
-				'rule' => array('notEmpty'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			'notempty' => array(
+				'rule' => array('notempty'),
+				'message' => 'Campo obrigatório',
+				'allowEmpty' => false,
+			),
+			'minLength' => array(
+                    'rule' => array('minLength', 6),
+                    'required' => true,
+                    'message' => 'Sua senha precisa conter pelo menos 6 caracteres.'
+            ),
+		),
+		'password_confirm' => array(
+            'notEmpty' => array(
+                    'rule' => 'notEmpty',
+                    'required' => true,
+                    'message' => 'Confime sua senha.'
+            ),
+            'minLength' => array(
+                    'rule' => array('minLength', 6),
+                    'required' => true,
+                    'message' => 'Sua senha precisa conter pelo menos 6 caracteres.'
+            ),
+            'passwordConfirmation' => array(
+                    'rule'    => array('passwordConfirmation'),
+            'message' => 'As duas senhas não conferem.'
+            ),
+            
+        ),
+		'email' => array(
+			'email' => array(
+				'rule' => array('email'),
+				'message' => 'Email inválido',
+				'allowEmpty' => false,
 			),
 		),
 		'role' => array(
-			'notEmpty' => array(
-				'rule' => array('notEmpty'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			'notempty' => array(
+				'rule' => array('notempty'),
+				'message' => 'Categoria inválida',
+				'allowEmpty' => false,
 			),
 		),
 	);
-
-	//The Associations below have been created with all possible keys, those that are not needed can be removed
-
-/**
- * hasMany associations
- *
- * @var array
- */
+	
+	public function passwordConfirmation($data){
+         
+        $password = AuthComponent::password($this->data['User']['password']);
+		$password_confirmation = AuthComponent::password($this->data['User']['password_confirm']);
+              
+        if ($password == $password_confirmation) {
+				return true;
+		} else {
+            return false;
+		}
+         
+    }
+	
+	public function beforeSave($options = Array()) {
+        if (isset($this->data['User']['password'])) {
+            $password = AuthComponent::password($this->data['User']['password']);
+            $this->data['User']['password'] = $password;
+        }
+        return parent::beforeSave();
+	}
+	
 	public $hasMany = array(
-		'Comment' => array(
-			'className' => 'Comment',
+		'Photo' => array(
+			'className' => 'Photo',
 			'foreignKey' => 'user_id',
 			'dependent' => false,
 			'conditions' => '',
@@ -87,5 +107,4 @@ class User extends AppModel {
 			'counterQuery' => ''
 		)
 	);
-
 }

@@ -20,7 +20,7 @@ class CategoriesCitiesController extends AppController {
  *
  * @return void
  */
-	public function index() {
+	public function admin_index() {
 		$this->CategoriesCity->recursive = 0;
 		$this->set('categoriesCities', $this->Paginator->paginate());
 	}
@@ -32,7 +32,7 @@ class CategoriesCitiesController extends AppController {
  * @param string $id
  * @return void
  */
-	public function view($id = null) {
+	public function admin_view($id = null) {
 		if (!$this->CategoriesCity->exists($id)) {
 			throw new NotFoundException(__('Invalid categories city'));
 		}
@@ -45,7 +45,7 @@ class CategoriesCitiesController extends AppController {
  *
  * @return void
  */
-	public function add() {
+	public function admin_add() {
 		if ($this->request->is('post')) {
 			$this->CategoriesCity->create();
 			if ($this->CategoriesCity->save($this->request->data)) {
@@ -55,9 +55,9 @@ class CategoriesCitiesController extends AppController {
 				$this->Session->setFlash(__('The categories city could not be saved. Please, try again.'));
 			}
 		}
-		$cities = $this->CategoriesCity->City->find('list');
 		$categories = $this->CategoriesCity->Category->find('list');
-		$this->set(compact('cities', 'categories'));
+		$cities = $this->CategoriesCity->City->find('list');
+		$this->set(compact('categories', 'cities'));
 	}
 
 /**
@@ -67,11 +67,11 @@ class CategoriesCitiesController extends AppController {
  * @param string $id
  * @return void
  */
-	public function edit($id = null) {
+	public function admin_edit($id = null) {
 		if (!$this->CategoriesCity->exists($id)) {
 			throw new NotFoundException(__('Invalid categories city'));
 		}
-		if ($this->request->is(array('post', 'put'))) {
+		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->CategoriesCity->save($this->request->data)) {
 				$this->Session->setFlash(__('The categories city has been saved.'));
 				return $this->redirect(array('action' => 'index'));
@@ -82,9 +82,9 @@ class CategoriesCitiesController extends AppController {
 			$options = array('conditions' => array('CategoriesCity.' . $this->CategoriesCity->primaryKey => $id));
 			$this->request->data = $this->CategoriesCity->find('first', $options);
 		}
-		$cities = $this->CategoriesCity->City->find('list');
 		$categories = $this->CategoriesCity->Category->find('list');
-		$this->set(compact('cities', 'categories'));
+		$cities = $this->CategoriesCity->City->find('list');
+		$this->set(compact('categories', 'cities'));
 	}
 
 /**
@@ -94,7 +94,7 @@ class CategoriesCitiesController extends AppController {
  * @param string $id
  * @return void
  */
-	public function delete($id = null) {
+	public function admin_delete($id = null) {
 		$this->CategoriesCity->id = $id;
 		if (!$this->CategoriesCity->exists()) {
 			throw new NotFoundException(__('Invalid categories city'));
@@ -106,4 +106,5 @@ class CategoriesCitiesController extends AppController {
 			$this->Session->setFlash(__('The categories city could not be deleted. Please, try again.'));
 		}
 		return $this->redirect(array('action' => 'index'));
-	}}
+	}
+}
